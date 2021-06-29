@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Service</title>
+    <link rel="stylesheet" href="compiled.css">
+</head>
+
+<body id="app">
+    <div id="moveToTop" hidden>
+        <div class="flex bg-yellow-550 hover:bg-gray-400 fixed w-10 h-10 right-4 bottom-8 z-30 transition duration-200 cursor-pointer justify-center items-center rounded-xl text-white font-semibold">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 15l7-7 7 7"></path>
+            </svg>
+        </div>
+    </div>
+    <header class="flex justify-center bg-sky">
+        <div class="wrap-container h-11 mt-5 flex items-center justify-between">
+            <a href="#">
+                <svg width="78" height="24" viewBox="0 0 78 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0.128 1.2V18H12.056V14.496H3.944V1.2H0.128ZM12.8537 11.76C12.8537 13.608 13.4057 15.168 14.5337 16.44C15.6617 17.688 17.0777 18.312 18.7577 18.312C20.0537 18.312 21.2057 17.928 22.2137 17.136V18H25.7897V5.52H22.2137V6.36C21.1817 5.592 20.0297 5.208 18.7577 5.208C17.0777 5.208 15.6617 5.832 14.5337 7.08C13.4057 8.328 12.8537 9.888 12.8537 11.76ZM19.3817 8.76C20.1497 8.76 20.7977 9.048 21.3497 9.624C21.9017 10.2 22.1657 10.896 22.1657 11.736C22.1657 13.464 20.9177 14.76 19.3817 14.76C17.8217 14.76 16.5977 13.464 16.5977 11.736C16.5977 10.08 17.8217 8.76 19.3817 8.76ZM27.6158 18H31.2158V10.944C31.2158 9.576 32.1998 8.544 33.5198 8.544C34.8398 8.544 35.7998 9.576 35.7998 10.944V18H39.3998V9.984C39.3998 8.616 38.9438 7.488 38.0078 6.576C37.0958 5.664 35.9678 5.208 34.6238 5.208C33.1838 5.208 32.0558 5.736 31.2158 6.792V5.52H27.6158V18ZM40.8365 11.76C40.8365 13.608 41.3885 15.168 42.5165 16.44C43.6445 17.688 45.0605 18.312 46.7405 18.312C48.0365 18.312 49.1885 17.928 50.1965 17.136V18H53.7725V-1.43051e-06H50.1965V6.36C49.1645 5.592 48.0125 5.208 46.7405 5.208C45.0605 5.208 43.6445 5.832 42.5165 7.08C41.3885 8.328 40.8365 9.888 40.8365 11.76ZM47.3645 8.76C48.1325 8.76 48.7805 9.048 49.3325 9.624C49.8845 10.2 50.1485 10.896 50.1485 11.736C50.1485 13.464 48.9005 14.76 47.3645 14.76C45.8045 14.76 44.5805 13.464 44.5805 11.736C44.5805 10.08 45.8045 8.76 47.3645 8.76ZM59.1986 18V-1.43051e-06H55.5986V18H59.1986ZM64.8156 18.096C64.3596 19.344 63.3756 19.968 61.8156 19.968H61.3596V23.4H61.7916C64.8636 23.4 66.6636 22.176 67.8156 19.296L73.1196 5.52H69.3996L66.5916 13.224L63.8796 5.52H60.1596L64.8876 17.904L64.8156 18.096Z"
+                        fill="#213053" />
+                    <path
+                        d="M75.7458 14.232C74.5938 14.232 73.7298 15.096 73.7298 16.272C73.7298 17.448 74.5938 18.312 75.7458 18.312C76.9218 18.312 77.8098 17.448 77.8098 16.272C77.8098 15.096 76.9218 14.232 75.7458 14.232Z"
+                        fill="#F18B62" />
+                </svg>
+            </a>
+            <ul
+                class="hidden md:flex flex-row w-2/5 items-center justify-evenly lg:justify-end flex-1 font-semibold text-base">
+                <li class="lg:pr-10">
+                    <a class="hover:text-blue-800 border-bottom whitespace-nowrap" href="#">About us</a>
+                </li>
+                <li class="lg:pr-10">
+                    <a class="hover:text-blue-800 border-bottom whitespace-nowrap" href="#">Services</a>
+                </li>
+                <li class="lg:pr-10">
+                    <a class="hover:text-blue-800 border-bottom whitespace-nowrap" href="#">Pricing</a>
+                </li>
+                <li class="lg:pr-16">
+                    <a class="hover:text-blue-800 border-bottom whitespace-nowrap" href="#">Contact</a>
+                </li>
+            </ul>
+            <div class="flex">
+                <div class="md:hidden flex items-end relative">
+                    <button class="btn-nocolor px-0 sm:px-8" type="button" id="navbarBtn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="navbar"
+                        class="opacity-100 group-hover:opacity-100 absolute top-14 -left-7 bg-white w-60 border border-t-0 hidden">
+                        <button type="button">
+                            <svg id="navbarClose" class="absolute top-3 right-3" width="13" height="13"
+                                viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.4158 6.00409L11.7158 1.71409C11.9041 1.52579 12.0099 1.27039 12.0099 1.00409C12.0099 0.73779 11.9041 0.482395 11.7158 0.294092C11.5275 0.105788 11.2721 0 11.0058 0C10.7395 0 10.4841 0.105788 10.2958 0.294092L6.0058 4.59409L1.7158 0.294092C1.52749 0.105788 1.2721 -1.9841e-09 1.0058 0C0.739497 1.9841e-09 0.484102 0.105788 0.295798 0.294092C0.107495 0.482395 0.0017066 0.73779 0.0017066 1.00409C0.0017066 1.27039 0.107495 1.52579 0.295798 1.71409L4.5958 6.00409L0.295798 10.2941C0.20207 10.3871 0.127676 10.4977 0.0769072 10.6195C0.0261385 10.7414 0 10.8721 0 11.0041C0 11.1361 0.0261385 11.2668 0.0769072 11.3887C0.127676 11.5105 0.20207 11.6211 0.295798 11.7141C0.388761 11.8078 0.499362 11.8822 0.621222 11.933C0.743081 11.9838 0.873786 12.0099 1.0058 12.0099C1.13781 12.0099 1.26852 11.9838 1.39038 11.933C1.51223 11.8822 1.62284 11.8078 1.7158 11.7141L6.0058 7.41409L10.2958 11.7141C10.3888 11.8078 10.4994 11.8822 10.6212 11.933C10.7431 11.9838 10.8738 12.0099 11.0058 12.0099C11.1378 12.0099 11.2685 11.9838 11.3904 11.933C11.5122 11.8822 11.6228 11.8078 11.7158 11.7141C11.8095 11.6211 11.8839 11.5105 11.9347 11.3887C11.9855 11.2668 12.0116 11.1361 12.0116 11.0041C12.0116 10.8721 11.9855 10.7414 11.9347 10.6195C11.8839 10.4977 11.8095 10.3871 11.7158 10.2941L7.4158 6.00409Z"
+                                    fill="#6F6E6E" />
+                            </svg>
+                        </button>
+                        <ul class="items-center px-3 py-2 font-semibold text-base hover:bg-gray-100">
+                            <li class="pl-10 pb-4">
+                                <a class="hover:text-blue-800 border-bottom whitespace-nowrap" href="#">About us</a>
+                            </li>
+                            <li class="pl-10 pb-4">
+                                <a class="hover:text-blue-800 border-bottom whitespace-nowrap" href="#">Services</a>
+                            </li>
+                            <li class="pl-10 pb-4">
+                                <a class="hover:text-blue-800 border-bottom whitespace-nowrap" href="#">Pricing</a>
+                            </li>
+                            <li class="pl-10 pb-4">
+                                <a class="hover:text-blue-800 border-bottom whitespace-nowrap" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn-nocolor px-2 sm:px-6">Login</button>
+                <button class="btn-orange whitespace-nowrap">Get started</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="flex justify-center bg-auto bg-center bg-sky"
+            style="background-image: url(img/bg-hero.jpg); background-repeat: no-repeat">
+            <div class="wrap-container flex flex-col items-center lg:flex-row justify-between pt-36 pb-32">
+                <div class="max-w-md">
+                    <h1 class="text-7xl font-semibold text-center lg:text-left">Get started your business.</h1>
+                    <p class="pt-8 text-center lg:text-left">With lots of unique blocks, you can easily build a page
+                        without coding. Build your
+                        next website
+                        fast.</p>
+                    <button class="btn-orange mt-16 min-w-full lg:min-w-min justify-center lg:justify-start">
+                        <span>Create a free account</span>
+                        <svg class="mt-2 ml-7" width="5" height="10" viewBox="0 0 7 12" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L6 6L1 11" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <img class="pt-5 lg:pt-0 sm:block hidden" src="img/hero-image.png" alt="hero-Image"
+                    style="width: 574px; height: 588px;">
+            </div>
+        </section>
+        <section class="flex justify-center bg-white">
+            <div class="mt-20 sm:mt-28 sm:pb-28 pb-16 wrap-container">
+                <div class="flex sm:flex-row flex-col items-center justify-between border-b border-gray-300 pb-28">
+                    <div class="max-w-xs pr-4 xl:pr-0 text-center sm:text-left">
+                        <div class="flex justify-center sm:justify-start">
+                            <img src="img/target.svg" alt="icon target">
+                        </div>
+                        <h2 class="font-semibold text-2xl pt-14">User centered design</h2>
+                        <p class="text-base pt-6">With lots of unique blocks, you can easily build a page without
+                            coding. Build
+                            your next website within few minutes.</p>
+                    </div>
+                    <div class="max-w-xs pr-4 xl:pr-0 mt-10 sm:mt-0 text-center sm:text-left">
+                        <div class="flex justify-center sm:justify-start">
+                            <img src="img/money.svg" alt="icon money">
+                        </div>
+                        <h2 class="font-semibold text-2xl pt-14">Earn extra money</h2>
+                        <p class="text-base pt-6">With lots of unique blocks, you can easily build a page without
+                            coding. Build your next website within few minutes. </p>
+                    </div>
+                    <div class="max-w-xs text-center mt-10 sm:mt-0 sm:text-left">
+                        <div class="flex justify-center sm:justify-start">
+                            <img src="img/rocket.svg" alt="icon rocket">
+                        </div>
+                        <h2 class="font-semibold text-2xl pt-7">Launch your service</h2>
+                        <p class="text-base pt-6">With lots of unique blocks, you can easily build a page without
+                            coding. Build your next website within few minutes. </p>
+                    </div>
+                </div>
+                <div class="mt-28 flex items-center justify-between flex-col lg:flex-row">
+                    <div class="max-w-md">
+                        <h2 class="font-semibold text-5xl lg:text-left text-center">Trusted by 25,000+ happy customers.
+                        </h2>
+                        <p class="max-w-sm pt-8 lg:text-left text-center">With lots of unique blocks, you can easily
+                            build a page without coding.
+                            Build your next
+                            website within few minutes.</p>
+                    </div>
+                    <div class="flex lg:pt-0 pt-5 sm:flex-row flex-col">
+                        <div class="px-8 py-8 mr-7 text-white bg-blue-500 rounded-3xl" style="width: 226px;">
+                            <p class="text-6xl">15k</p>
+                            <p>Active users visiting us every month!</p>
+                        </div>
+                        <div class="px-8 py-8 sm:mt-0 mt-5 text-white bg-indigo-900 rounded-3xl" style="width: 226px;">
+                            <p class="text-6xl">4.9</p>
+                            <div class="flex pt-1">
+                                <svg class="pl-1" width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M16.6813 5.8322L11.3535 5.05813L8.97178 0.230426C8.90398 0.115117 8.78021 0.0443115 8.64644 0.0443115C8.51268 0.0443115 8.3889 0.115117 8.3211 0.230426L5.93828 5.05704L0.609043 5.8322C0.472339 5.85193 0.358687 5.94756 0.315866 6.07887C0.273044 6.21018 0.308477 6.35442 0.407268 6.45095L4.26348 10.2092L3.35332 15.5155C3.33009 15.6516 3.38603 15.789 3.49767 15.8702C3.6093 15.9513 3.75729 15.9621 3.87953 15.898L8.64517 13.3929L13.4108 15.897C13.533 15.961 13.681 15.9502 13.7927 15.8691C13.9043 15.7879 13.9603 15.6505 13.937 15.5145L13.0269 10.2092L16.8831 6.45095C16.9819 6.35447 17.0173 6.2103 16.9746 6.07901C16.9318 5.94771 16.8183 5.85205 16.6817 5.8322H16.6813Z"
+                                        fill="#FF7139" />
+                                </svg>
+                                <svg class="pl-1" width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M16.6813 5.8322L11.3535 5.05813L8.97178 0.230426C8.90398 0.115117 8.78021 0.0443115 8.64644 0.0443115C8.51268 0.0443115 8.3889 0.115117 8.3211 0.230426L5.93828 5.05704L0.609043 5.8322C0.472339 5.85193 0.358687 5.94756 0.315866 6.07887C0.273044 6.21018 0.308477 6.35442 0.407268 6.45095L4.26348 10.2092L3.35332 15.5155C3.33009 15.6516 3.38603 15.789 3.49767 15.8702C3.6093 15.9513 3.75729 15.9621 3.87953 15.898L8.64517 13.3929L13.4108 15.897C13.533 15.961 13.681 15.9502 13.7927 15.8691C13.9043 15.7879 13.9603 15.6505 13.937 15.5145L13.0269 10.2092L16.8831 6.45095C16.9819 6.35447 17.0173 6.2103 16.9746 6.07901C16.9318 5.94771 16.8183 5.85205 16.6817 5.8322H16.6813Z"
+                                        fill="#FF7139" />
+                                </svg>
+                                <svg class="pl-1" width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M16.6813 5.8322L11.3535 5.05813L8.97178 0.230426C8.90398 0.115117 8.78021 0.0443115 8.64644 0.0443115C8.51268 0.0443115 8.3889 0.115117 8.3211 0.230426L5.93828 5.05704L0.609043 5.8322C0.472339 5.85193 0.358687 5.94756 0.315866 6.07887C0.273044 6.21018 0.308477 6.35442 0.407268 6.45095L4.26348 10.2092L3.35332 15.5155C3.33009 15.6516 3.38603 15.789 3.49767 15.8702C3.6093 15.9513 3.75729 15.9621 3.87953 15.898L8.64517 13.3929L13.4108 15.897C13.533 15.961 13.681 15.9502 13.7927 15.8691C13.9043 15.7879 13.9603 15.6505 13.937 15.5145L13.0269 10.2092L16.8831 6.45095C16.9819 6.35447 17.0173 6.2103 16.9746 6.07901C16.9318 5.94771 16.8183 5.85205 16.6817 5.8322H16.6813Z"
+                                        fill="#FF7139" />
+                                </svg>
+                                <svg class="pl-1" width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M16.6813 5.8322L11.3535 5.05813L8.97178 0.230426C8.90398 0.115117 8.78021 0.0443115 8.64644 0.0443115C8.51268 0.0443115 8.3889 0.115117 8.3211 0.230426L5.93828 5.05704L0.609043 5.8322C0.472339 5.85193 0.358687 5.94756 0.315866 6.07887C0.273044 6.21018 0.308477 6.35442 0.407268 6.45095L4.26348 10.2092L3.35332 15.5155C3.33009 15.6516 3.38603 15.789 3.49767 15.8702C3.6093 15.9513 3.75729 15.9621 3.87953 15.898L8.64517 13.3929L13.4108 15.897C13.533 15.961 13.681 15.9502 13.7927 15.8691C13.9043 15.7879 13.9603 15.6505 13.937 15.5145L13.0269 10.2092L16.8831 6.45095C16.9819 6.35447 17.0173 6.2103 16.9746 6.07901C16.9318 5.94771 16.8183 5.85205 16.6817 5.8322H16.6813Z"
+                                        fill="#FF7139" />
+                                </svg>
+                                <svg class="pl-1" width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M16.6813 5.8322L11.3535 5.05813L8.97178 0.230426C8.90398 0.115117 8.78021 0.0443115 8.64644 0.0443115C8.51268 0.0443115 8.3889 0.115117 8.3211 0.230426L5.93828 5.05704L0.609043 5.8322C0.472339 5.85193 0.358687 5.94756 0.315866 6.07887C0.273044 6.21018 0.308477 6.35442 0.407268 6.45095L4.26348 10.2092L3.35332 15.5155C3.33009 15.6516 3.38603 15.789 3.49767 15.8702C3.6093 15.9513 3.75729 15.9621 3.87953 15.898L8.64517 13.3929L13.4108 15.897C13.533 15.961 13.681 15.9502 13.7927 15.8691C13.9043 15.7879 13.9603 15.6505 13.937 15.5145L13.0269 10.2092L16.8831 6.45095C16.9819 6.35447 17.0173 6.2103 16.9746 6.07901C16.9318 5.94771 16.8183 5.85205 16.6817 5.8322H16.6813Z"
+                                        fill="#FF7139" />
+                                </svg>
+                            </div>
+                            <p class="pt-1">1,938 Rating</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="flex justify-center bg-white"
+            style="background-image: url(img/bg-content-1.jpg); background-repeat: no-repeat; background-position: bottom">
+            <div class="wrap-container flex justify-center xl:justify-end pt-64 pb-32">
+                <div class="max-w-xl bg-white rounded-3xl pl-6 pr-6 sm:pl-20 sm:pr-32 py-16 box-border relative">
+                    <h2 class="text-5xl font-semibold">Get access to your daily cost.</h2>
+                    <p class="pt-6 pb-11">With lots of unique blocks, you can easily build a page without coding. Build
+                        your
+                        next website within few minutes.</p>
+                    <button class="btn-orange px-9 py-5 ">
+                        <span class="whitespace-nowrap">Get started now</span>
+                        <svg class="mt-2 ml-7" width="5" height="10" viewBox="0 0 7 12" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L6 6L1 11" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <img class="lg:block hidden absolute bottom-6 -right-24" src="img/cube.svg" alt="icon cube">
+                </div>
+            </div>
+        </section>
+        <section class="flex justify-center bg-white">
+            <div
+                class="wrap-container flex lg:flex-row flex-col items-center justify-between 2xl:pl-28 2xl:pr-20 pt-40 pb-28">
+                <div class="max-w-sm lg:mb-0 mb-10">
+                    <h2 class="text-5xl font-semibold lg:text-left text-center">We create value to your business</h2>
+                    <p class="mt-5 lg:text-left text-center">With lots of unique blocks, you can easily build a page
+                        without coding. Build your
+                        next website within few minutes.</p>
+                    <div class="mt-16 flex justify-between">
+                        <img src="img/content-2-icon-1.svg" alt="icon 1">
+                        <div class="ml-7">
+                            <h2 class="text-2xl font-semibold">User centered design</h2>
+                            <p class="text-base mt-4">With lots of unique blocks, you can easily build a page without
+                                coding. </p>
+                        </div>
+                    </div>
+                    <div class="mt-12 flex justify-between">
+                        <img src="img/content-2-icon-2.svg" alt="icon 2">
+                        <div class="ml-7">
+                            <h2 class="text-2xl font-semibold">Get latest updates</h2>
+                            <p class="text-base mt-4">With lots of unique blocks, you can easily build a page without
+                                coding.</p>
+                        </div>
+                    </div>
+                </div>
+                <img class="md:block hidden" style="width: 548px; height: 604px;" src="img/content-2-image.jpg"
+                    alt="content 2 image">
+            </div>
+        </section>
+        <section class="flex justify-center bg-white"
+            style="background-image: url(img/bg-testimonial.jpg); background-repeat: no-repeat; background-position: top">
+            <div class="wrap-container flex items-center flex-col pt-48 pb-48 2xl:px-14">
+                <div class="max-w-lg">
+                    <h2 class="text-5xl font-semibold text-center">Customers are loving it</h2>
+                    <p class="pt-5 text-center">With lots of unique blocks, you can easily build a page without
+                        coding. Build your next website fast.</p>
+                </div>
+                <div class="pt-20 flex justify-between items-center min-w-full sm:flex-row flex-col">
+                    <div class="flex flex-col items-center max-w-xs">
+                        <div class="bg-gray-300 rounded-full" style="width: 88px; height: 88px;"></div>
+                        <p class="text-xl pt-8 text-center">“You made it so simple. My new site is so much faster and
+                            easier to work
+                            with than my old site.”</p>
+                        <h3 class="pt-6 font-semibold text-xl">Alan Farmer</h3>
+                        <p class="pt-1 text-sm">Digital Marketer</p>
+                    </div>
+                    <div class="flex flex-col items-center max-w-xs sm:pt-0 pt-10">
+                        <div class="bg-gray-300 rounded-full" style="width: 88px; height: 88px;"></div>
+                        <p class="text-xl pt-8 text-center">“Simply the best. Better than all the rest. I’d recommend
+                            this product to beginners and advanced users.”</p>
+                        <h3 class="pt-6 font-semibold text-xl">Christina Olson</h3>
+                        <p class="pt-1 text-sm">Project Manager</p>
+                    </div>
+                    <div class="flex flex-col items-center max-w-xs sm:pt-0 pt-14">
+                        <div class="bg-gray-300 rounded-full" style="width: 88px; height: 88px;"></div>
+                        <p class="text-xl pt-8 text-center">“Must have service for all, who want to be successful
+                            Product Designer or Interaction Designer.”</p>
+                        <h3 class="pt-6 font-semibold text-xl">Lewis Ingram</h3>
+                        <p class="pt-1 text-sm">Product Designer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="flex flex-col items-center"
+            style="background-image: url(img/bg-cta.jpg); background-repeat: no-repeat; background-position: bottom">
+            <div class="wrap-container flex items-center flex-col pt-28 pb-48 text-white text-center">
+                <div>
+                    <h2 class="text-5xl font-semibold">Get a demo</h2>
+                    <p class="max-w-md pt-5 text-gray-400">With lots of unique blocks, you can easily build a page
+                        without coding.
+                        Build your next website fast.</p>
+                </div>
+                <form action="#" class="flex flex-col w-full lg:max-w-sm pt-16">
+                    <div class="flex flex-col">
+                        <label class="text-left font-semibold" for="name">Your Name</label>
+                        <input
+                            class="mt-4 px-5 py-4 shadow-none border-none rounded-2xl text-gray-700 focus:outline-none"
+                            id="name" type="text" placeholder="Type your name" required>
+                    </div>
+                    <div class="flex flex-col pt-5">
+                        <label class="text-left font-semibold" for="email">Email Address</label>
+                        <input
+                            class="mt-4 px-5 py-4 shadow-none border-none rounded-2xl text-gray-700 focus:outline-none"
+                            id="email" type="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="flex flex-col pt-5">
+                        <label class="text-left font-semibold" for="company-size-1">Company Size</label>
+                        <select class="select" id="company-size-1" required>
+                            <option value="" selected disabled>Select an option</option>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col pt-5">
+                        <label class="text-left font-semibold" for="company-size-2">Approx. Budget</label>
+                        <select class="select" id="company-size-2" required>
+                            <option value="" selected disabled>Select an option</option>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                        </select>
+                        <button class="btn-orange py-5 mt-8 shadow-none justify-center" type="submit">
+                            <span>Get a free demo</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="flex justify-center bg-white relative"
+        style="background-image: url(img/footer-round.png); background-repeat: no-repeat; background-position: bottom left">
+        <div class="wrap-container flex justify-between items-center lg:flex-row flex-col pt-10 lg:pt-24 pb-28">
+            <div class="grid grid-cols-3 lg:w-1/2 w-11/12 lg:order-1 order-2 lg:pt-0 pt-20">
+                <div>
+                    <h4 class="text-base">Company</h4>
+                    <ul class="font-semibold text-base">
+                        <li class="pt-6"><a href="#">About us</a></li>
+                        <li class="pt-6"><a href="#">Contact us</a></li>
+                        <li class="pt-6"><a href="#">Careers</a></li>
+                        <li class="pt-6"><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-base">Product</h4>
+                    <ul class="font-semibold text-base">
+
+                        <li class="pt-6"><a href="#">Features</a></li>
+                        <li class="pt-6"><a href="#">Pricing</a></li>
+                        <li class="pt-6"><a href="#">News</a></li>
+                        <li class="pt-6"><a href="#">Help desk</a></li>
+                        <li class="pt-6"><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-base">Services</h4>
+                    <ul class="font-semibold text-base">
+                        <li class="pt-6"><a href="#">Digital Marketing</a></li>
+                        <li class="pt-6"><a href="#">Content Writing</a></li>
+                        <li class="pt-6"><a href="#">SEO for Business</a></li>
+                        <li class="pt-6"><a href="#">UI Design</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lg:order-2 order-1">
+                <h4 class="text-base">Newsletter</h4>
+                <div
+                    class="sm:max-w-md min-w-full sm:min-w-min mt-8 bg-gray-200 rounded-2xl py-2 sm:py-6 px-2 sm:px-8 flex flex-col">
+                    <span class="xl:px-44"></span>
+                    <h3 class="font-semibold pb-4">Get monthly updates on your inbox</h3>
+                    <form class="flex bg-white rounded-xl items-center">
+                        <div class="flex flex-1 pl-5 py-2">
+                            <label for="subscribe"></label>
+                            <input
+                                class="flex-1 shadow-none border-none rounded-xl sm:px-2 py-2 text-gray-700 focus:outline-none"
+                                id="subscribe" type="email" placeholder="Enter your email" required>
+                        </div>
+                        <button class="btn-orange px-4 py-2 mr-2 sm:mx-2 rounded-xl" type="submit">
+                            <span>Subscribe</span>
+                        </button>
+                    </form>
+                    <p class="text-base pt-3">We won’t spam you at all!</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>

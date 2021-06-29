@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Mazzard';
+        font-weight: 400;
+        font-size: 17px;
+        color: #213053;
+    }
+
+    @font-face {
+        font-family: 'Mazzard';
+        src: url('fonts/MazzardM-Regular.woff2') format('woff2'),
+            url('fonts/MazzardM-Regular.woff') format('woff'),
+            url('fonts/MazzardM-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Mazzard';
+        src: url('fonts/MazzardM-SemiBold.woff2') format('woff2'),
+            url('fonts/MazzardM-SemiBold.woff') format('woff'),
+            url('fonts/MazzardM-SemiBold.ttf') format('truetype');
+        font-weight: 600;
+        font-style: normal;
+    }
+}
+
+@layer components {
+    .btn-nocolor {
+        @apply px-6 py-3 font-semibold text-base rounded-2xl hover:text-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-700 focus:ring-opacity-75;
+    }
+
+    .btn-orange {
+        @apply px-6 py-3 shadow-3xl-orange flex flex-nowrap font-semibold text-base bg-yellow-550 text-white rounded-2xl hover:bg-yellow-800 focus:outline-none focus:ring-2 focus:ring-yellow-700 focus:ring-opacity-75;
+    }
+    
+    .select {
+        @apply mt-4 px-5 py-4 appearance-none overflow-hidden shadow-none border-none rounded-2xl text-gray-700 focus:outline-none;
+        background: url('img/arrow.svg') no-repeat;
+        background-position: right 25px top 28px;
+        background-color: white;
+    }
+}
+
+@layer utilities {
+    .wrap-container {
+        width: 81vw;
+    }
+
+    .bg-sky {
+        background-color: #EBF5FF;
+    }
+
+    .border-bottom:hover {
+        border-bottom: 2px solid rgba(30, 64, 175);
+        margin-bottom: -2px;
+    }
+}
