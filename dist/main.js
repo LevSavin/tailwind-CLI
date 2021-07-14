@@ -27,13 +27,21 @@ class MoveTop {
 
     getScroll() {
         let element = document.querySelector("#app"),
-        isSafari = window.safari !== undefined,
-        is_ios = /iP(ad|od|hone)/i.test(window.navigator.userAgent);
+            isSafari = window.safari !== undefined,
+            is_ios = /iP(ad|od|hone)/i.test(window.navigator.userAgent);
 
-        if('scrollBehavior' in document.documentElement.style) {
-            element.scrollIntoView({behavior: "smooth", block: "start"});
+        if ('scrollBehavior' in document.documentElement.style) {
+            addEventListener('click', () => {
+                element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    inline: "center"
+                });
+            });
         } else {
-            element.scrollIntoView(true);
+            addEventListener('click', () => {
+                element.scrollIntoView(true);
+            });
         }
 
         // if (isSafari || is_ios) {
@@ -47,6 +55,6 @@ class MoveTop {
         //         });
         //     })
         // }
-    }   
+    }
 }
-    const moveTop = new MoveTop();
+const moveTop = new MoveTop();
