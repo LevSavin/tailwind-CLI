@@ -26,6 +26,8 @@ class MoveTop {
     }
 
     getScroll() {
+        let element = document.querySelector("#app"),
+
         if ('scrollBehavior' in document.documentElement.style) {
             addEventListener('click', () => {
                 element.scrollIntoView({
