@@ -28,10 +28,11 @@ class MoveTop {
     getScroll() {
         let element = document.querySelector("#app"),
         isSafari = window.safari !== undefined,
-            is_ios = /iP(ad|od|hone)/i.test(window.navigator.userAgent);
+        is_ios = /iP(ad|od|hone)/i.test(window.navigator.userAgent);
 
         if (isSafari || is_ios) {
-            document.body.scrollTop = 0;
+            // document.body.scrollTop = 0;
+            element.scrollIntoView(true);
         } else {
             addEventListener('click', () => {
                 element.scrollIntoView({
