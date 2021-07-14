@@ -30,17 +30,23 @@ class MoveTop {
         isSafari = window.safari !== undefined,
         is_ios = /iP(ad|od|hone)/i.test(window.navigator.userAgent);
 
-        if (isSafari || is_ios) {
-            // document.body.scrollTop = 0;
-            element.scrollIntoView(true);
+        if('scrollBehavior' in document.documentElement.style) {
+            element.scrollIntoView({behavior: "smooth", block: "start"});
         } else {
-            addEventListener('click', () => {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            })
+            element.scrollIntoView(true);
         }
+
+        // if (isSafari || is_ios) {
+        //     // document.body.scrollTop = 0;
+        //     element.scrollIntoView(true);
+        // } else {
+        //     addEventListener('click', () => {
+        //         element.scrollIntoView({
+        //             behavior: 'smooth',
+        //             block: 'start'
+        //         });
+        //     })
+        // }
     }   
 }
     const moveTop = new MoveTop();
